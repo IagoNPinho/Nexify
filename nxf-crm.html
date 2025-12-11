@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nexify CRM</title>
+    <link rel="stylesheet" href="assets/css/nxf-crm.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>Nexify CRM</h2>
+        <nav>
+            <a href="#" data-page="dashboard" class="active">Dashboard</a>
+            <a href="#" data-page="clientes">Clientes</a>
+            <a href="#" data-page="financeiro">Financeiro</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page active">
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Entradas</h3>
+                    <p id="card-entradas">R$ 0,00</p>
+                </div>
+                <div class="card">
+                    <h3>Saídas</h3>
+                    <p id="card-saidas">R$ 0,00</p>
+                </div>
+                <div class="card">
+                    <h3>Saldo</h3>
+                    <p id="card-saldo">R$ 0,00</p>
+                </div>
+            </div>
+
+            <canvas id="chart"></canvas>
+
+            <div class="panel">
+                <h3>Últimas Entradas</h3>
+                <table id="ultimasEntradas">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Valor</th>
+                            <th>Descrição</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <h3>Últimas Saídas</h3>
+                <table id="ultimasSaidas">
+                    <thead>
+                        <tr>
+                            <th>Valor</th>
+                            <th>Descrição</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CLIENTES -->
+        <section id="clientes" class="page">
+            <h1>Clientes</h1>
+
+            <form id="formCliente">
+                <input type="text" id="cliNome" placeholder="Nome completo" required>
+                <input type="text" id="cliTelefone" placeholder="Telefone">
+                <input type="email" id="cliEmail" placeholder="Email">
+
+                <select id="cliTipo">
+                    <option value="lead">Lead</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                </select>
+
+                <select id="cliOrigem">
+                    <option value="Instagram">Instagram</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Indicação">Indicação</option>
+                    <option value="Google Ads">Google Ads</option>
+                </select>
+
+                <textarea id="cliObs" placeholder="Observações"></textarea>
+
+                <button type="submit">Cadastrar Cliente</button>
+            </form>
+
+            <table id="listaClientes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Status</th>
+                        <th>Criado</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- FINANCEIRO -->
+        <section id="financeiro" class="page">
+            <h1>Financeiro</h1>
+
+            <form id="formFinanceiro">
+                <select id="tipo" name="tipo">
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select>
+
+                <input type="number" id="valor" name="valor" placeholder="Valor" required>
+                <input type="text" id="categoria" name="categoria" placeholder="Categoria">
+
+                <!-- Só para ENTRADA -->
+                <select id="clienteEntrada" name="clienteEntrada"></select>
+
+                <select id="metodo" name="metodo">
+                    <option>Pix</option>
+                    <option>Cartão</option>
+                    <option>Dinheiro</option>
+                </select>
+
+                <input type="text" id="descricao" name="descricao" placeholder="Descrição opcional">
+
+                <button type="submit">Salvar</button>
+            </form>
+
+            <table id="listaFinanceiro">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script type="module" src="assets/js/nexify-crm/nxf-crm.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+:root {
+    --bg: #0D1114;
+    /* fundo principal */
+    --surface: #121417;
+    /* cards / painéis */
+    --muted: #9AA6B2;
+    /* textos secundários */
+    --text: #E6EEF3;
+    /* texto principal */
+    --primary: #4F46E5;
+    /* roxo/azul principal (botões, destaques) */
+    --primary-600: #6D5DFB;
+    /* variação para gradiente */
+    --accent-success: #22C55E;
+    /* verde para sucesso/entradas */
+    --accent-warn: #F59E0B;
+    /* amarelo/alertas */
+    --danger: #EF4444;
+    /* erros */
+    --glass: rgba(255, 255, 255, 0.03);
+    --radius: 10px;
+    --shadow-soft: 0 10px 30px rgba(2, 6, 23, 0.6);
+    --card: #1E2428;
+    --border: #2A3035;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--surface);
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 12px;
+    margin: 6px 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.sidebar nav a.active {
+    background: var(--primary);
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    border: 1px solid var(--border);
+}
+
+form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+form input,
+select,
+button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+}
+
+button {
+    background: var(--primary);
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
