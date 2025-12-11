@@ -3,13 +3,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebas
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAK6QAB9RwwedOq-dbckRIe7vkJAKXq3JI",
-  authDomain: "nexify-crm.firebaseapp.com",
-  projectId: "nexify-crm",
-  storageBucket: "nexify-crm.firebasestorage.app",
-  messagingSenderId: "128056060234",
-  appId: "1:128056060234:web:9d9eadd4048aeb2449b9b3",
-  measurementId: "G-PZTKFKZ6LC"
+  apiKey: "AIzaSyBVVIRMyzcFaz91lQ7wViqAfSj24mZQHsA",
+  authDomain: "nexify-9c438.firebaseapp.com",
+  projectId: "nexify-9c438",
+  storageBucket: "nexify-9c438.firebasestorage.app",
+  messagingSenderId: "982438156328",
+  appId: "1:982438156328:web:8ad2388ff5524b48757d1d"
 };
 
 export const app = initializeApp(firebaseConfig);
